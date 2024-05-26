@@ -1,0 +1,7 @@
+.favorite-icon img {
+    transition: filter 0.3s ease;
+}
+
+.favorite-icon:hover img {
+    filter: brightness(0) saturate(100%) invert(13%) sepia(99%) saturate(6410%) hue-rotate(355deg) brightness(99%) contrast(100%);
+}
