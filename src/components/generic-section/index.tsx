@@ -1,10 +1,11 @@
-import './style/style.css';
+import VerMaisButton from "../ver-mais";
 import React, {Fragment} from "react";
+import './style/style.css';
 
 interface GenericSectionProps {
     children: React.ReactNode;
-    subtitle: string;
     title: string;
+    subtitle: string;
 }
 
 export default function GenericSection({children, title, subtitle}: GenericSectionProps) {
@@ -22,9 +23,7 @@ export default function GenericSection({children, title, subtitle}: GenericSecti
                 </div>
             </div>
             <div className={'w-full mt-12 items-center justify-center flex'}>
-                <button className={'border-black border-2 rounded-[10px] font-koulen px-[45px] py-[2px] text-center'}>
-                    VER MAIS
-                </button>
+                <VerMaisButton action={() => console.log('Ver mais')}/>
             </div>
         </Fragment>
     )

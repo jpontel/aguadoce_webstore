@@ -3,5 +3,77 @@
 }
 
 .favorite-icon:hover img {
-    filter: brightness(0) saturate(100%) invert(13%) sepia(99%) saturate(6410%) hue-rotate(355deg) brightness(99%) contrast(100%);
+    filter: brightness(0) saturate(100%) invert(73%) sepia(99%) saturate(6410%) hue-rotate(355deg) brightness(99%) contrast(100%);
 }
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-2px);
+    }
+}
+
+.cart-bounce:hover {
+    animation: bounce 0.5s ease-in-out;
+}
+
+@keyframes headSwing {
+    0% {
+        transform: rotate(0deg);
+        transform-origin: bottom;
+    }
+    25% {
+        transform: rotate(-10deg);
+        transform-origin: bottom;
+    }
+    50% {
+        transform: rotate(10deg);
+        transform-origin: bottom;
+    }
+    75% {
+        transform: rotate(-5deg);
+        transform-origin: bottom;
+    }
+    100% {
+        transform: rotate(0deg);
+        transform-origin: bottom;
+    }
+}
+
+.user-icon-head:hover {
+    animation: headSwing 0.5s ease-in-out;
+}
+
+/* Definindo a animação de balanço */
+@keyframes headSwing {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(-10deg);
+    }
+    50% {
+        transform: rotate(10deg);
+    }
+    75% {
+        transform: rotate(-5deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+/* Estilo para a cabeça do ícone */
+.user-icon:hover #head {
+    animation: headSwing 0.8s ease-in-out;
+    transform-origin: center bottom;
+}
+
+.background {
+    background: black;
+    justify-content: center;
+}
+
+
