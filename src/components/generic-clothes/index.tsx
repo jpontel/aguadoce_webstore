@@ -45,7 +45,7 @@ export default function GenericClothes({hasDiscount, title, value, previousValue
                     </div>
                     <div className={'justify-end flex w-full h-full'}>
                         <button
-                            className={`font-bold font-montserrat text-[12px] rounded-full bg-orange-500 p-[6px] ${isClicked ? 'animate-bounce'}`}
+                            className={`font-bold font-montserrat text-[12px] rounded-full bg-orange-500 p-[6px] ${isClicked ? 'animate-bounce' : ''}`}
                             onClick={handleCLick}
                         >
                             Comprar
