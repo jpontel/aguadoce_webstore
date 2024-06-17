@@ -3,28 +3,42 @@ import favoriteIcon from '../../assets/icons/favorite.svg';
 import searchIcon from '../../assets/icons/search.svg';
 import cartIcon from '../../assets/icons/cart.svg';
 import './style/style.css';
+import {useNavigate} from "react-router-dom";
 
 export default function Navbar() {
+    const navigate = useNavigate();
+
     return (
         <div className={'w-full h-full bg-black flex'} style={{boxShadow: '0px 4px 60px 0px rgba(0, 0, 0, 0.25)'}}>
             <div className={'w-full inline-flex text-white p-6 gap-32 items-center mx-56'}>
-                <button className={'w-full'}>
+                <button
+                    className={'w-full'}
+                    onClick={() => navigate('/')}
+                >
                     <img alt={'Água Doce Logo'} src={aguaDoceLogo}/>
                 </button>
                 <div className={'w-full inline-flex gap-32 items-center font-montserrat font-semibold'}>
-                    <button className={'transition-colors hover:text-orange-500'}>
+                    <button
+                        className={'transition-colors hover:text-orange-500'}
+                        onClick={() => navigate('/masculino')}
+                    >
                         Masculino
                     </button>
-                    <button className={'transition-colors hover:text-orange-500'}>
+                    <button
+                        className={'transition-colors hover:text-orange-500'}
+                        onClick={() => navigate('/feminino')}
+                    >
                         Feminino
                     </button>
-                    <button className={'transition-colors hover:text-orange-500'}>
+                    <button
+                        className={'transition-colors hover:text-orange-500'}
+                    >
                         Marcas
                     </button>
                 </div>
                 <div className={'items-end justify-end w-full inline-flex gap-10'}>
-                    <button className={'cart-bounce'}>
-                        <img src={searchIcon} alt={'Search'}/>
+                    <button>
+                        <img src={searchIcon} alt={'Search'} className={'user-icon-head'}/>
                     </button>
                     <button className={'user-icon'}>
                         <svg width="23" height="22" viewBox="0 0 23 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -43,7 +57,7 @@ export default function Navbar() {
                     <button className="favorite-icon">
                         <img src={favoriteIcon} alt={"Favorite"}/>
                     </button>
-                    <button className={'cart-bounce'}>
+                    <button className={'user-icon-head'}>
                         <img src={cartIcon} alt={'Cart'}/>
                     </button>
                 </div>

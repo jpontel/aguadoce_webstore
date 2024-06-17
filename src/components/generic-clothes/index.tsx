@@ -1,4 +1,5 @@
 import jacket from './../../assets/store-jacket.png';
+import './style/style.css';
 import {useState} from "react";
 
 export interface GenericClothesProps {
@@ -13,7 +14,7 @@ export default function GenericClothes({hasDiscount, title, value, previousValue
 
     const handleCLick = () => {
         setIsClicked(true);
-        setTimeout(() => setIsClicked(false), 1000);
+        setTimeout(() => setIsClicked(false), 2000);
     };
 
     return (
@@ -45,10 +46,10 @@ export default function GenericClothes({hasDiscount, title, value, previousValue
                     </div>
                     <div className={'justify-end flex w-full h-full'}>
                         <button
-                            className={`font-bold font-montserrat text-[12px] rounded-full bg-orange-500 p-[6px] ${isClicked ? 'animate-bounce' : ''}`}
+                            className={`font-bold font-montserrat text-[12px] rounded-full bg-orange-500 p-[6px] ${isClicked ? 'button-animation w-[61px]' : ''}`}
                             onClick={handleCLick}
                         >
-                            Comprar
+                            <span className={`${isClicked ? 'button-animation' : ''}`}>{isClicked ? 'OK' : 'Comprar'}</span>
                         </button>
                     </div>
                 </div>

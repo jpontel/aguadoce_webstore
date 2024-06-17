@@ -3,12 +3,13 @@ import React, {Fragment} from "react";
 import './style/style.css';
 
 interface GenericSectionProps {
+    action: () => void;
     children: React.ReactNode;
     title: string;
     subtitle: string;
 }
 
-export default function GenericSection({children, title, subtitle}: GenericSectionProps) {
+export default function GenericSection({children, title, subtitle, action}: GenericSectionProps) {
     return (
         <Fragment>
             <div className={'px-32 pt-24 ml-28'}>
@@ -23,7 +24,7 @@ export default function GenericSection({children, title, subtitle}: GenericSecti
                 </div>
             </div>
             <div className={'w-full mt-12 items-center justify-center flex'}>
-                <VerMaisButton action={() => console.log('Ver mais')}/>
+                <VerMaisButton action={action} />
             </div>
         </Fragment>
     )

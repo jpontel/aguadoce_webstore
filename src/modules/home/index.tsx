@@ -7,9 +7,11 @@ import Highlights from "../../components/highlights";
 import Carousel from "../../components/carousel";
 import Footer from "../../components/footer";
 import {useEffect, useState} from "react";
+import {useNavigate} from "react-router-dom";
 
 export default function Home() {
     const [data, setData] = useState<GenericClothesProps[]>([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
         setData([{
@@ -56,6 +58,7 @@ export default function Home() {
             <GenericSection
                 title={'Novidades'}
                 subtitle={'As melhores novidades da temporada'}
+                action={() => navigate('/novidades')}
                 children={
                     data.map((item, index) => (
                         <GenericClothes
@@ -73,6 +76,7 @@ export default function Home() {
             <GenericSection
                 title={'BEST-SELLERS'}
                 subtitle={'Os favoritos das nossas araras virtuais'}
+                action={() => navigate('/best-sellers')}
                 children={
                     data.map((item, index) => (
                         <GenericClothes

@@ -11,12 +11,12 @@
         transform: translateY(0);
     }
     50% {
-        transform: translateY(-2px);
+        transform: translateY(-1px);
     }
 }
 
 .cart-bounce:hover {
-    animation: bounce 0.5s ease-in-out;
+    animation: bounce 0.8s ease-in-out;
 }
 
 @keyframes headSwing {

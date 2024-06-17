@@ -1,3 +1,28 @@
-.animate-bounce {
-
+@keyframes slideRight {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(100%);
+    }
 }
+
+.check-icon {
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 12px solid white;
+    transform: rotate(45deg);
+    opacity: 0;
+    margin-left: 5px;
+}
+
+.button-animation .check-icon {
+    opacity: 1;
+}
+
+.button-animation .button-text {
+    animation: slideRight 0.5s forwards;
+}
+
