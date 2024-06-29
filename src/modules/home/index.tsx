@@ -5,8 +5,8 @@ import GenericBlocks from "../../components/generic-blocks";
 import SocialMedia from "../../components/social-media";
 import Highlights from "../../components/highlights";
 import Carousel from "../../components/carousel";
-import Footer from "../../components/footer";
 import {useNavigate} from "react-router-dom";
+import Footer from "../../components/footer";
 import {useEffect, useState} from "react";
 
 export default function Home() {
