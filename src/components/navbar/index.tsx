@@ -57,7 +57,10 @@ export default function Navbar() {
                     <button className="favorite-icon">
                         <img src={favoriteIcon} alt={"Favorite"}/>
                     </button>
-                    <button className={'user-icon-head'}>
+                    <button
+                        className={'user-icon-head'}
+                        onClick={() => navigate('/cart')}
+                    >
                         <img src={cartIcon} alt={'Cart'}/>
                     </button>
                 </div>

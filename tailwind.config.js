@@ -6,6 +6,7 @@ export default {
       fontFamily: {
         'montserrat': ['Montserrat', 'sans-serif'],
         'koulen': ['Koulen', 'cursive'],
+        'oxygen': ['Oxygen', 'sans-serif'],
       },
     },
   },

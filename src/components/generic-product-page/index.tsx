@@ -1,4 +1,5 @@
 import arrowDown from './../../assets/icons/arrow-down.svg';
+import './style/style.css';
 
 interface GenericProductPageProps {
     categories: string[];
@@ -8,26 +9,58 @@ interface GenericProductPageProps {
 
 export default function GenericProductPage({categories, title, action}: GenericProductPageProps) {
     return (
-        <div className={'w-full inline-flex pl-64 pt-12'}>
-            <div className={'border border-slate-400 p-6 rounded-[7px] bg-slate-50'}>
-                <div className={'text-[30px]'}>
-                    Categorias
-                </div>
-                <div className={'text-[18px]'}>
-                    {categories.map((item, index) => (
-                        <div className={''}>
-                            <div key={index} className={'mb-2'}>
-                                {item}
-                            </div>
-                            <button>
-                                <img src={arrowDown} alt={'arrow-down'}/>
-                            </button>
+        <div className={'w-full inline-flex pl-60 pt-12'}>
+            <div className={'w-[250px] flex flex-col gap-4'}>
+                <div className={'w-full py-[40px] px-[30px] rounded-[13px] background-card'}>
+                    <div className={'w-full inline-flex'}>
+                        <div className={'w-1 h-4 bg-black'}/>
+                        <div className={'font-oxygen text-[22px]'}>
+                            Categorias
                         </div>
-                    ))}
+                    </div>
+                    <div className={'w-full text-[18px]'}>
+                        {categories.map((item, index) => (
+                            <div className={'w-full flex mt-3 justify-between'}>
+                                <div key={index}>
+                                    {item}
+                                </div>
+                                <button>
+                                    <img src={arrowDown} alt={'arrow-down'}
+                                         className={'items-center justify-center  h-full'}/>
+                                </button>
+
+                            </div>
+                        ))}
+                    </div>
+                </div>
+                <div>
+                    <div className={'w-[250px] py-[40px] px-[30px] rounded-[13px] background-card'}>
+                        <div className={'w-full inline-flex'}>
+                            <div className={'w-1 h-4 bg-black'}/>
+                            <div className={'font-oxygen text-[22px]'}>
+                                Média de Preço
+                            </div>
+                        </div>
+                        <div className={'w-full text-[18px]'}>
+                            {categories.map((item, index) => (
+                                <div className={'w-full flex mt-3 justify-between'}>
+                                    <div key={index}>
+                                        {item}
+                                    </div>
+                                    <button>
+                                        <img src={arrowDown} alt={'arrow-down'}
+                                             className={'items-center justify-center h-full'}/>
+                                    </button>
+
+                                </div>
+                            ))}
+                        </div>
+                    </div>
                 </div>
             </div>
+            {/*Barra de Pesquisa*/}
             <div className={'w-full pl-28 pr-64'}>
-                <div className={'font-montserrat font-bold text-[40px]'}>
+                <div className={'font-montserrat font-regular text-[36px] text-[#3D3D3D]'}>
                     {title}
                 </div>
                 <div className={'inline-flex w-full items-center justify-center gap-4'}>

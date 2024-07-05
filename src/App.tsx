@@ -4,6 +4,7 @@ import Novidades from "./modules/novidades";
 import Masculino from "./modules/masculino";
 import Feminino from "./modules/feminino";
 import Navbar from "./components/navbar";
+import Cart from "./components/cart";
 import Home from "./modules/home";
 import {Fragment} from "react";
 import './App.css'
@@ -16,6 +17,7 @@ function App() {
                 <Routes>
                     <Route path={"/"} element={<Home/>}/>
                     <Route path={"*"} element={<div>404</div>}/>
+                    <Route path={"/cart"} element={<Cart/>}/>
                     <Route path={"/masculino"} element={<Masculino/>}/>
                     <Route path={"/feminino"} element={<Feminino/>}/>
                     <Route path={"/novidades"} element={<Novidades/>}/>
