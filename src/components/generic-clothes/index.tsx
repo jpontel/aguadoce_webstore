@@ -7,9 +7,10 @@ export interface GenericClothesProps {
     hasDiscount: boolean;
     title: string;
     value: number;
+    small?: boolean;
 }
 
-export default function GenericClothes({hasDiscount, title, value, previousValue}: GenericClothesProps) {
+export default function GenericClothes({hasDiscount, title, value, previousValue, small}: GenericClothesProps) {
     const [isClicked, setIsClicked] = useState<boolean>(false);
 
     const handleCLick = () => {
@@ -18,7 +19,7 @@ export default function GenericClothes({hasDiscount, title, value, previousValue
     };
 
     return (
-        <div className={'w-[360px] h-full bg-[#F1F2F7] border-black border rounded-[10px] flex-col justify-between'}
+        <div className={`h-full bg-[#F1F2F7] border-black border rounded-[10px] flex-col justify-between ${small ? 'w-[250px]' : 'w-[360px]'}`}
              style={{filter: 'drop-shadow(0px 2px 30px rgba(0, 0, 0, 0.04))', border:'1px solid rgba(0, 0, 0, 0.06)'}}>
             <div>
                 <img alt={'Clothes'} src={jacket} className={'rounded-[10px]'}/>

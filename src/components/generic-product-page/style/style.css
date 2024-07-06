@@ -4,3 +4,23 @@
     background: rgba(239, 239, 239, 0.20);
     box-shadow: 0 2px 30px 0 rgba(0, 0, 0, 0.03);
 }
+
+.button-with-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px; /* Adjust based on your design */
+    height: 35px; /* Adjust based on your design */
+    background-color: #FF8515; /* Example background color */
+    border-radius: 50%; /* Makes the button round */
+}
+
+.children-container-product-page {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.children-container-product-page > * {
+    flex: 1 1 calc(70% - 600px);
+    margin-right: 50px;
+}
