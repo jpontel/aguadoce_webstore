@@ -32,6 +32,7 @@ export default function Navbar() {
                     </button>
                     <button
                         className={'transition-colors hover:text-orange-500'}
+                        onClick={() => navigate('/marcas')}
                     >
                         Marcas
                     </button>

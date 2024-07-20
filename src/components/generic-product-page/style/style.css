@@ -22,5 +22,5 @@
 
 .children-container-product-page > * {
     flex: 1 1 calc(70% - 600px);
-    margin-right: 50px;
+    margin-right: 20px;
 }

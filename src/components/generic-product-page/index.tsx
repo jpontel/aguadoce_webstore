@@ -45,12 +45,15 @@ export default function GenericProductPage({categories, title, action, data}: Ge
                 </div>
                 {/*Número de Resultados*/}
                 <div className={'mt-4'}>
-                    <div className={'font-oxygen text-[16px] text-[#414141] font-semibold'}>
-                        Mostrando 1-12 de 24 resultados
-                    </div>
-                    <div className={'text-[#949494] font-oxygen text-[16px]'}>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua.
+                    <div className={'my-6'}>
+                        <div className={'font-oxygen text-[16px] text-[#414141] font-semibold'}>
+                            Mostrando 1-12 de 24 resultados
+                        </div>
+                        <div className={'text-[#949494] font-oxygen text-[16px]'}>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+                            ut
+                            labore et dolore magna aliqua.
+                        </div>
                     </div>
                     {/*Resultados*/}
                     {data.map((item, index) => (
@@ -64,6 +67,15 @@ export default function GenericProductPage({categories, title, action, data}: Ge
                             />
                         </div>
                     ))}
+                    <div className={'justify-center items-center flex flex-col font-oxygen'}>
+                        <div className={'font-normal text-center justify-center flex'}>
+                            Mostrando 12-24 Resultados
+                        </div>
+                        <div className={'w-[500px] bg-black h-[2px] my-2'}/>
+                        <button>
+                            Mostrar mais
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

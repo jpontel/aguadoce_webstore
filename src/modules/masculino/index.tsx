@@ -1,6 +1,6 @@
 import GenericProductPage from "../../components/generic-product-page";
-import {useEffect, useState} from "react";
 import {GenericClothesProps} from "../../components/generic-clothes";
+import {useEffect, useState} from "react";
 
 export default function Masculino() {
     const [data, setData] = useState<GenericClothesProps[]>([]);
