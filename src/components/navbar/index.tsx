@@ -2,8 +2,8 @@ import aguaDoceLogo from '../../assets/logo/agua-doce.svg';
 import favoriteIcon from '../../assets/icons/favorite.svg';
 import searchIcon from '../../assets/icons/search.svg';
 import cartIcon from '../../assets/icons/cart.svg';
-import './style/style.css';
 import {useNavigate} from "react-router-dom";
+import './style/style.css';
 
 export default function Navbar() {
     const navigate = useNavigate();
