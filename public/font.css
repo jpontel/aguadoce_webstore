@@ -1,14 +1,11 @@
-@font-face {
-    font-family: 'Montserrat';
-    src: url('fonts/Montserrat-VariableFont_wght.ttf') format('truetype');
+body {
+    font-family: 'Montserrat', sans-serif;
 }
 
-@font-face {
-    font-family: 'Koulen';
-    src: url('fonts/Koulen-Regular.ttf') format('truetype');
+h1 {
+    font-family: 'Koulen', cursive;
 }
 
-@font-face {
-    font-family: 'Oxygen';
-    src: url("fonts/Oxygen-Light.ttf") format("truetype");
+p {
+    font-family: 'Oxygen', sans-serif;
 }

@@ -10,14 +10,14 @@ export default function Highlights() {
                 </div>
             </div>
             <div className={'w-full items-center justify-center flex gap-24 py-12'}>
-                <div className={'w-[400px] h-[550px] bg-black'}>
-                    oiee
+                <div className={'w-[400px] h-[550px] bg-black rounded-[5px]'}>
+
                 </div>
-                <div className={'w-[400px] h-[550px] bg-purple-300'}>
-                    oiee
+                <div className={'w-[400px] h-[550px] bg-purple-300 rounded-[5px]'}>
+
                 </div>
-                <div className={'w-[400px] h-[550px] bg-yellow-300'}>
-                    oiee
+                <div className={'w-[400px] h-[550px] bg-yellow-300 rounded-[5px]'}>
+
                 </div>
             </div>
         </div>

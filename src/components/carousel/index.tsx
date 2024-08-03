@@ -1,5 +1,6 @@
 import creditCardIcon from './../../assets/icons/credit-card.svg';
 import carouselPic from './../../assets/carousel/clothes.png';
+import trocaIcon from './../../assets/icons/troca-facil.svg';
 import Description from "./description";
 
 export default function Carousel() {
@@ -10,7 +11,7 @@ export default function Carousel() {
             </div>
             <div className={'w-full h-[68px] bg-[#F5F5F5] border-b-[#E2E2E2] border inline-flex items-center justify-center gap-32'}>
                 <Description hasRightPipe={true} icon={creditCardIcon} title={'CARTÃO'} subtitle={'10x sem juros'} />
-                <Description hasRightPipe={true} icon={creditCardIcon} title={'TROCA FÁCIL'} subtitle={'30 dias para trocas'} />
+                <Description hasRightPipe={true} icon={trocaIcon} title={'TROCA FÁCIL'} subtitle={'30 dias para trocas'} />
                 <Description hasRightPipe={true} icon={creditCardIcon} title={'ENTREGA'} subtitle={'Envio rápido'} />
                 <Description hasRightPipe={false} icon={creditCardIcon} title={'OS MELHORES LOOKS'} subtitle={'Várias opções disponíveis'} />
             </div>

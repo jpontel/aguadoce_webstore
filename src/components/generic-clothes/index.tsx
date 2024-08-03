@@ -1,5 +1,5 @@
 import jacket from './../../assets/store-jacket.png';
-import {useState} from "react";
+import { useState } from "react";
 import './style/style.css';
 
 export interface GenericClothesProps {
@@ -10,19 +10,23 @@ export interface GenericClothesProps {
     small?: boolean;
 }
 
-export default function GenericClothes({hasDiscount, title, value, previousValue, small}: GenericClothesProps) {
-    const [isClicked, setIsClicked] = useState<boolean>(false);
+export default function GenericClothes({ hasDiscount, title, value, previousValue, small }: GenericClothesProps) {
+    const [isLoading, setIsLoading] = useState<boolean>(false);
+    const [isChecked, setIsChecked] = useState<boolean>(false);
 
-    const handleCLick = () => {
-        setIsClicked(true);
-        setTimeout(() => setIsClicked(false), 2000);
+    const handleClick = () => {
+        setIsLoading(true);
+        setTimeout(() => {
+            setIsLoading(false);
+            setIsChecked(true);
+        }, 5000);
     };
 
     return (
         <div className={`h-full bg-[#F1F2F7] border-black border rounded-[10px] flex-col justify-between ${small ? 'w-[250px]' : 'w-[360px]'}`}
-             style={{filter: 'drop-shadow(0px 2px 30px rgba(0, 0, 0, 0.04))', border:'1px solid rgba(0, 0, 0, 0.06)'}}>
+             style={{ filter: 'drop-shadow(0px 2px 30px rgba(0, 0, 0, 0.04))', border: '1px solid rgba(0, 0, 0, 0.06)' }}>
             <div>
-                <img alt={'Clothes'} src={jacket} className={'rounded-[10px]'}/>
+                <img alt={'Clothes'} src={jacket} className={'rounded-[10px]'} />
             </div>
             <div className={'bg-[#161616] text-white p-4 items-end justify-end rounded-b-[10px]'}>
                 <div className={'font-montserrat text-[16px] font-semibold mb-4'}>
@@ -33,7 +37,7 @@ export default function GenericClothes({hasDiscount, title, value, previousValue
                         <div className={'inline-flex w-full gap-2 items-center'}>
                             {hasDiscount && (
                                 <div className={'font-montserrat text-[14px] text-center justify-center'}
-                                     style={{textDecoration: 'line-through'}}>
+                                     style={{ textDecoration: 'line-through' }}>
                                     R${previousValue}
                                 </div>
                             )}
@@ -42,15 +46,20 @@ export default function GenericClothes({hasDiscount, title, value, previousValue
                             </div>
                         </div>
                         <div className={'font-montserrat font-bold text-[10px] w-full flex'}>
-                            10x de R${value/10} sem júros
+                            10x de R${value / 10} sem júros
                         </div>
                     </div>
                     <div className={'justify-end flex w-full h-full'}>
                         <button
-                            className={`w-[70px] font-bold font-montserrat text-[12px] rounded-full bg-orange-500 p-[6px] hover:transition ease-in-out hover:bg-orange-700 ${isClicked ? 'button-animation w-[61px]' : ''}`}
-                            onClick={handleCLick}
+                            className={`w-[70px] font-bold font-montserrat text-[12px] rounded-full bg-orange-500 p-[6px] hover:transition ease-in-out hover:bg-orange-700 ${isLoading ? 'button-animation' : ''}`}
+                            onClick={handleClick}
+                            disabled={isChecked}
                         >
-                            <span className={`${isClicked ? 'button-animation' : ''}`}>{isClicked ? 'OK' : 'Comprar'}</span>
+                            {isLoading ? (
+                                <div className="button-check"></div>
+                            ) : (
+                                <span>{'Comprar'}</span>
+                            )}
                         </button>
                     </div>
                 </div>

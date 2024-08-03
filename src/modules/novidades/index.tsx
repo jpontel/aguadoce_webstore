@@ -1,6 +1,6 @@
-import {useEffect, useState} from "react";
-import {GenericClothesProps} from "../../components/generic-clothes";
 import GenericProductPage from "../../components/generic-product-page";
+import {GenericClothesProps} from "../../components/generic-clothes";
+import {useEffect, useState} from "react";
 
 export default function Novidades() {
     const [data, setData] = useState<GenericClothesProps[]>([]);

@@ -9,7 +9,7 @@ export default function Footer() {
                         </div>
                         <div className={'gap-4 flex items-center justify-center'}>
                             <input className={'rounded-[7px] h-[31px] pl-[10px] text-[13px]'} type="text" placeholder="Nome"/>
-                            <input className={'rdounded-[7px] h-[31px] pl-[10px] text-[13px]'} type="text" placeholder="E-mail"/>
+                            <input className={'rounded-[7px] h-[31px] pl-[10px] text-[13px]'} type="text" placeholder="E-mail"/>
                             <button className={'font-bold text-white font-montserrat text-[12px] rounded-lg bg-orange-500 p-[6px] w-[100px]'}>
                                 Enviar
                             </button>

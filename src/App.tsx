@@ -1,7 +1,9 @@
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import BestSellers from "./modules/best-sellers";
+import Favorites from "./components/favorites";
 import Novidades from "./modules/novidades";
 import Masculino from "./modules/masculino";
+import Profile from "./components/profile";
 import Feminino from "./modules/feminino";
 import Navbar from "./components/navbar";
 import Marcas from "./modules/marcas";
@@ -19,6 +21,8 @@ function App() {
                     <Route path={"/"} element={<Home/>}/>
                     <Route path={"*"} element={<div>404</div>}/>
                     <Route path={"/cart"} element={<Cart/>}/>
+                    <Route path={"/favorites"} element={<Favorites/>}/>
+                    <Route path={"/profile"} element={<Profile/>}/>
                     <Route path={"/masculino"} element={<Masculino/>}/>
                     <Route path={"/feminino"} element={<Feminino/>}/>
                     <Route path={"/marcas"} element={<Marcas/>}/>
