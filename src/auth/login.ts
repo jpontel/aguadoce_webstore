@@ -1,4 +1,4 @@
-import {AGUADOCE_URL} from "../utils/util.ts";
+import {AGUADOCE_LOCAL, AGUADOCE_URL} from "../utils/util.ts";
 
 interface LoginResponse {
     access_token: string;
@@ -6,7 +6,7 @@ interface LoginResponse {
 
 const loginService = async (username: string, password: string): Promise<void> => {
     try {
-        const response = await fetch(`${AGUADOCE_URL}/login`, {
+        const response = await fetch(`${AGUADOCE_LOCAL}/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
