@@ -3,6 +3,7 @@ import useMobile from "../../hooks/useMobile.ts";
 import {useNavigate} from "react-router-dom";
 import SearchBar from "../searchBar";
 import './style/style.css';
+import MenuButton from "./button";
 
 export default function Navbar() {
     const navigate = useNavigate();
@@ -37,7 +38,8 @@ export default function Navbar() {
             >
                 <div className={'w-full flex text-white p-6 lg:gap-32 items-center justify-center lg:mx-56'}>
                     {isMobile && (
-                        <div className={''}>
+                        <div className={'inline-flex sm:gap-6 xs:gap-2'}>
+                            <MenuButton/>
                             <button
                                 onClick={handleSearch}
                                 className={'user-icon-head'}
@@ -53,7 +55,7 @@ export default function Navbar() {
                     )}
                     <button className={'w-full items-center justify-center flex'} onClick={() => navigate('/')}>
                         {isMobile ? (
-                            <div>
+                            <div className={'px-18'}>
                                 <svg width="180" height="21" viewBox="0 0 231 31" fill="none"
                                      xmlns="http://www.w3.org/2000/svg">
                                     <path

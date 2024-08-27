@@ -2,6 +2,7 @@ import jacket from './../../assets/store-jacket.png';
 import useIsMobile from "../../hooks/useMobile.ts";
 import {Fragment, useState} from "react";
 import './style/style.css';
+import {useNavigate} from "react-router-dom";
 
 export interface GenericClothesProps {
     previousValue?: number;
@@ -14,7 +15,12 @@ export interface GenericClothesProps {
 export default function GenericClothes({hasDiscount, title, value, previousValue, small}: GenericClothesProps) {
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [isChecked, setIsChecked] = useState<boolean>(false);
+    const navigate = useNavigate();
     const isMobile = useIsMobile();
+
+    const handleComponentClick = () => {
+        navigate('/product');
+    }
 
     const handleClick = () => {
         setIsLoading(true);
@@ -27,7 +33,8 @@ export default function GenericClothes({hasDiscount, title, value, previousValue
     return (
         <Fragment>
             <div
-                className={`h-full bg-[#F1F2F7] border-black border rounded-[10px] flex-col justify-between ${small ? 'w-[250px]' : isMobile ? 'w-[100px]' : 'w-[360px]'}`}
+                className={`h-full bg-[#F1F2F7] border-black border rounded-[10px] flex-col justify-between ${small ? 'w-[250px]' : isMobile ? 'w-[150px]' : 'w-[360px]'}`}
+                onClick={handleComponentClick}
                 style={{
                     filter: 'drop-shadow(0px 2px 30px rgba(0, 0, 0, 0.04))',
                     border: '1px solid rgba(0, 0, 0, 0.06)'
@@ -35,7 +42,7 @@ export default function GenericClothes({hasDiscount, title, value, previousValue
                 <div>
                     <img alt={'Clothes'} src={jacket} className={'rounded-[10px]'}/>
                 </div>
-                <div className={'bg-[#161616] text-white p-4 items-end justify-end rounded-b-[10px]'}>
+                <div className={'bg-[#161616] text-white p-4 items-end justify-end rounded-b-[10px] cursor-pointer'}>
                     <div className={'font-montserrat xs:text-[14px] lg:text-[16px] font-semibold mb-4'}>
                         {title}
                     </div>

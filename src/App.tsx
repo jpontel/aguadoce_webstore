@@ -12,6 +12,7 @@ import Marcas from "./modules/marcas";
 import Home from "./modules/home";
 import Login from "./modules/login";
 import './App.css';
+import GenericProductDetail from "./components/generic-product-detail";
 
 function App() {
     return (
@@ -24,6 +25,7 @@ function App() {
                     <Route path={"*"} element={<div>404</div>}/>
                     <Route path={"login"} element={<Login/>}/>
                     {/*<Route path={"/cart"} element={<Cart/>}/>*/}
+                    <Route path={"/product"} element={<GenericProductDetail/>}/>
                     <Route path={"/favorites"} element={<Favorites/>}/>
                     <Route path={"/profile"} element={<Profile/>}/>
                     <Route path={"/masculino"} element={<Masculino/>}/>
