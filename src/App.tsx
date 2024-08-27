@@ -13,6 +13,7 @@ import Home from "./modules/home";
 import Login from "./modules/login";
 import './App.css';
 import GenericProductDetail from "./components/generic-product-detail";
+import Footer from "./components/footer";
 
 function App() {
     return (
@@ -34,6 +35,7 @@ function App() {
                     <Route path={"/novidades"} element={<Novidades/>}/>
                     <Route path={"/best-sellers"} element={<BestSellers/>}/>
                 </Routes>
+                <Footer/>
             </Fragment>
         </Router>
     )

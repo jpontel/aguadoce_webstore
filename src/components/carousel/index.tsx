@@ -30,7 +30,7 @@ export default function Carousel() {
     return (
         <div className={'w-full h-full'}>
             <div className={'w-full h-full'}>
-                <img src={carouselPic} className={'w-full'} />
+                <img alt={'carousel'} src={carouselPic} className={'w-full'} />
             </div>
             <div className={'w-full lg:h-[68px] xs:h-[40px] bg-[#F5F5F5] border-b-[#E2E2E2] border inline-flex items-center justify-center lg:gap-32 xs:gap-3'}>
                 {isMobile

@@ -6,7 +6,6 @@ import SocialMedia from "../../components/social-media";
 import Highlights from "../../components/highlights";
 import Carousel from "../../components/carousel";
 import {useNavigate} from "react-router-dom";
-import Footer from "../../components/footer";
 import {useEffect, useState} from "react";
 
 export default function Home() {
@@ -112,7 +111,6 @@ export default function Home() {
                 subtitle={'Navegue através da nossa variedade de produtos e escolha qual mais se encaixa com a sua necessidade'}
             />
             <SocialMedia />
-            <Footer/>
         </div>
     )
 }
