@@ -1,0 +1,1 @@
+export const AGUADOCE_URL = 'https://3.145.116.102:8080';

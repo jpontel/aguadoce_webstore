@@ -17,7 +17,7 @@ export default function Footer() {
                     </div>
                 </div>
             </div>
-            <div className={'w-full h-[200px] bg-black'}>
+            <div className={'w-full h-[200px] bg-black text-white'}>
                 <div>
                     Sobre a loja
                 </div>
