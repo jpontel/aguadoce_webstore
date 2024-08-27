@@ -12,11 +12,11 @@ interface GenericSectionProps {
 export default function GenericSection({children, title, subtitle, action}: GenericSectionProps) {
     return (
         <Fragment>
-            <div className={'px-32 pt-24 ml-28'}>
-                <div className={'font-koulen text-[40px]'}>
+            <div className={'lg:px-32 xs:pt-8 lg:pt-24 lg:ml-28 xs:ml-3 sm:ml-4'}>
+                <div className={'font-koulen lg:text-[40px] xs:text-[25px]'}>
                     {title}
                 </div>
-                <div className={'text-[25px] font-normal mb-5'}>
+                <div className={'lg:text-[25px] xs:text-[13px] font-normal mb-5'}>
                     {subtitle}
                 </div>
                 <div className={'inline-flex gap-7 children-container'}>

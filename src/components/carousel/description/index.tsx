@@ -8,13 +8,13 @@ interface DescriptionProps {
 export default function Description({hasRightPipe, icon, title, subtitle}:DescriptionProps) {
     return (
         <div className={'inline-flex items-center gap-2'}>
-            <img src={icon} className={'w-[31px] h-[29px]'} alt={'icon'}/>
-            <div className={'flex flex-col font-montserrat'}>
-                <div className={'font-semibold text-[12px]'}>{title}</div>
-                <div className={'text-[#606060] text-[10px]'}>{subtitle}</div>
+            <img src={icon} className={'w-[18px] sm:h-[19px] xs:h-[16px]'} alt={'icon'}/>
+            <div className={'sm:w-[50px] xs:w-[40px] flex flex-col font-montserrat'}>
+                <div className={'font-semibold xs:text-[5px] sm:text-[6px] lg:text-[12px]'}>{title}</div>
+                <div className={'text-[#606060] sm:text-[6px] xs:text-[5px] w-full flex'}>{subtitle}</div>
             </div>
             {hasRightPipe && (
-                <div className={'w-[1px] h-[32px] bg-[#C4C4C4] ml-[106px]'} />
+                <div className={'w-[1px] xs:h-[20px] h-[32px] bg-[#C4C4C4] xs:ml-[13px] lg:ml-[106px]'} />
             )}
         </div>
     )

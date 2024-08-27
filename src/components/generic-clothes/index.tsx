@@ -1,4 +1,5 @@
 import jacket from './../../assets/store-jacket.png';
+import useIsMobile from "../../hooks/useMobile.ts";
 import {Fragment, useState} from "react";
 import './style/style.css';
 
@@ -13,6 +14,7 @@ export interface GenericClothesProps {
 export default function GenericClothes({hasDiscount, title, value, previousValue, small}: GenericClothesProps) {
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [isChecked, setIsChecked] = useState<boolean>(false);
+    const isMobile = useIsMobile();
 
     const handleClick = () => {
         setIsLoading(true);
@@ -25,7 +27,7 @@ export default function GenericClothes({hasDiscount, title, value, previousValue
     return (
         <Fragment>
             <div
-                className={`h-full bg-[#F1F2F7] border-black border rounded-[10px] flex-col justify-between ${small ? 'w-[250px]' : 'w-[360px]'}`}
+                className={`h-full bg-[#F1F2F7] border-black border rounded-[10px] flex-col justify-between ${small ? 'w-[250px]' : isMobile ? 'w-[100px]' : 'w-[360px]'}`}
                 style={{
                     filter: 'drop-shadow(0px 2px 30px rgba(0, 0, 0, 0.04))',
                     border: '1px solid rgba(0, 0, 0, 0.06)'
@@ -34,7 +36,7 @@ export default function GenericClothes({hasDiscount, title, value, previousValue
                     <img alt={'Clothes'} src={jacket} className={'rounded-[10px]'}/>
                 </div>
                 <div className={'bg-[#161616] text-white p-4 items-end justify-end rounded-b-[10px]'}>
-                    <div className={'font-montserrat text-[16px] font-semibold mb-4'}>
+                    <div className={'font-montserrat xs:text-[14px] lg:text-[16px] font-semibold mb-4'}>
                         {title}
                     </div>
                     <div className={'w-full inline-flex justify-between'}>

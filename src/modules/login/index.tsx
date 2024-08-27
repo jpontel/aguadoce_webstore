@@ -11,9 +11,10 @@ export default function Login() {
         try {
             await loginService(username, password);
             setIsLoading(false);
+            alert('logado');
         } catch (error) {
             setIsLoading(false);
-            alert(error);
+            alert('nao autorizado!');
         }
     };
 

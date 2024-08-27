@@ -65,7 +65,7 @@ export default function SearchBar({data, isOpen, setIsOpen}: SearchBarProps) {
             <div className="spotlight">
                 <input
                     type="text"
-                    className={`w-full outline-none p-[12px] text-[16px] input-background ${query && filteredData.length > 0 ? 'rounded-t-lg border-b-[1px]' : 'rounded-lg'}`}
+                    className={`w-full outline-none p-[12px] lg:text-[16px] xs:text-[10px] input-background ${query && filteredData.length > 0 ? 'rounded-t-lg border-b-[1px]' : 'rounded-lg'}`}
                     placeholder="Pesquisar na loja..."
                     ref={inputRef}
                     value={query}
@@ -77,7 +77,7 @@ export default function SearchBar({data, isOpen, setIsOpen}: SearchBarProps) {
                         {filteredData.map((item, index) => (
                             <li
                                 key={item}
-                                className={`flex gap-4 mx-1 my-2 font-bold ${index === selectedIndex ? 'selected' : ''}`}
+                                className={`flex gap-4 my-2 font-bold xs:text-[8px] lg:text-[16px] ${index === selectedIndex ? 'selected' : ''}`}
                                 onClick={() => handleItemClick(item)}
                             >
                                 {item}

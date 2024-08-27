@@ -1,4 +1,5 @@
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import {Fragment} from "react";
 import BestSellers from "./modules/best-sellers";
 import Favorites from "./components/favorites";
 import Messages from "./components/messages";
@@ -9,9 +10,8 @@ import Feminino from "./modules/feminino";
 import Navbar from "./components/navbar";
 import Marcas from "./modules/marcas";
 import Home from "./modules/home";
-import {Fragment} from "react";
-import './App.css';
 import Login from "./modules/login";
+import './App.css';
 
 function App() {
     return (
