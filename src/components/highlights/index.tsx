@@ -11,7 +11,7 @@ export default function Highlights() {
                     Produtos recomendados da loja para você
                 </div>
             </div>
-            <div className={'w-full items-center justify-center flex lg:gap-24 xs:gap-4 lg:py-12 xs:py-8 xs:px-6 lg:px-0'}>
+            <div className={'w-full flex lg:inline-flex xs:flex-col lg:gap-24 xs:gap-4 lg:py-12 xs:py-8 xs:px-6 lg:px-0 items-center justify-center'}>
                 <Block img={'Produto 1'} />
                 <Block img={'Produto 1'} />
                 <Block img={'Produto 1'} />

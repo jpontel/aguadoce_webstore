@@ -1,7 +1,7 @@
 export default function Footer() {
     return (
         <div>
-            <div className={'w-full  bg-[#F5F5F5] sm:p-3 xs:p-2'}>
+            <div className={'w-full h-full items-end justify-end flex flex-col bg-[#F5F5F5] sm:p-3 xs:p-2'}>
                 <div className={'w-full bg-[#F5F5F5] sm:p-3 xs:p-2'}>
                     <div className={'w-full flex items-center justify-center'}>
                         <div className={'flex xs:flex-col lg:inline-flex xs:gap-[7px] justify-between'}>
