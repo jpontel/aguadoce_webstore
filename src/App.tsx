@@ -15,6 +15,8 @@ import Home from "./modules/home";
 import {Fragment} from "react";
 import './App.css';
 import AdminMenu from "./auth/admin/main-menu";
+import ManageProducts from "./auth/admin/manage-products";
+import AddProduct from "./auth/admin/manage-products/add-product";
 
 function App() {
     return (
@@ -30,6 +32,10 @@ function App() {
                     <Route path={"/product"} element={<GenericProductDetail/>}/>
                     <Route path={"/favorites"} element={<Favorites/>}/>
                     <Route path={'/admin'} element={<AdminMenu/>}/>
+                    <Route path={'/admin/manage-products'} element={<ManageProducts/>}/>
+                    <Route path={'/admin/manage-products/add'} element={<AddProduct/>}/>
+                    <Route path={'/admin/manage-products/delete'} element={<AddProduct/>}/>
+                    <Route path={'/admin/manage-products/edit'} element={<AddProduct/>}/>
                     <Route path={"/profile"} element={<Profile/>}/>
                     <Route path={"/masculino"} element={<Masculino/>}/>
                     <Route path={"/feminino"} element={<Feminino/>}/>

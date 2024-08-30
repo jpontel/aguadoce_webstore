@@ -171,6 +171,10 @@ export default function Navbar() {
                                             fill="white"/>
                                     </svg>
                                 </button>
+                                <div
+                                    className={'w-[80px] p-1 font-montserrat font-bold text-[12px] text-white items-center justify-center flex rounded-lg bg-amber-600'}>
+                                    <button onClick={() => navigate('/login')}>Login</button>
+                                </div>
                             </div>
                         </Fragment>
                     )}
