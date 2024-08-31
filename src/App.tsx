@@ -1,22 +1,21 @@
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import GenericProductDetail from "./components/generic-product-detail";
+import AddProduct from "./auth/admin/manage-products/add-product";
 import BestSellers from "./modules/best-sellers";
 import Favorites from "./components/favorites";
+import AdminMenu from "./auth/admin/main-menu";
 import Messages from "./components/messages";
 import Masculino from "./modules/masculino";
 import Novidades from "./modules/novidades";
 import Profile from "./components/profile";
+import Login from "./auth/login/index.tsx";
 import Feminino from "./modules/feminino";
 import Footer from "./components/footer";
 import Navbar from "./components/navbar";
 import Marcas from "./modules/marcas";
-import Login from "./auth/login/index.tsx";
 import Home from "./modules/home";
 import {Fragment} from "react";
 import './App.css';
-import AdminMenu from "./auth/admin/main-menu";
-import ManageProducts from "./auth/admin/manage-products";
-import AddProduct from "./auth/admin/manage-products/add-product";
 
 function App() {
     return (
@@ -32,7 +31,6 @@ function App() {
                     <Route path={"/product"} element={<GenericProductDetail/>}/>
                     <Route path={"/favorites"} element={<Favorites/>}/>
                     <Route path={'/admin'} element={<AdminMenu/>}/>
-                    <Route path={'/admin/manage-products'} element={<ManageProducts/>}/>
                     <Route path={'/admin/manage-products/add'} element={<AddProduct/>}/>
                     <Route path={'/admin/manage-products/delete'} element={<AddProduct/>}/>
                     <Route path={'/admin/manage-products/edit'} element={<AddProduct/>}/>

@@ -1,28 +1,74 @@
+import GenericProductDetail from "../../../../components/generic-product-detail";
 import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { addProduct, ProductData } from "../service/products.service.ts";
 
 export default function AddProduct() {
     const navigate = useNavigate();
+    const [formData, setFormData] = useState({
+        name: '',
+        description: '',
+        stockQuantity: '',
+        category: '',
+        gender: '',
+        size: '',
+        color: '',
+        parcela:'',
+        price: '',
+        imageUrl: '',
+        brand_id: 1,
+        category_id: 1,
+    });
+
+    console.log(formData)
+
+    const handleChange = (e: React.ChangeEvent<HTMLSelectElement | HTMLInputElement | HTMLTextAreaElement>) => {
+        const { name, value } = e.target;
+        setFormData({
+            ...formData,
+            [name]: value
+        });
+    };
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        const productData: ProductData = {
+            name: formData.name,
+            description: formData.description,
+            stock: parseInt(formData.stockQuantity),
+            brand_id: formData.brand_id,
+            category_id: formData.category.id,
+            gender: formData.gender,
+            variants: [
+                {
+                    size: formData.size,
+                    color: formData.color,
+                    price: parseFloat(formData.price),
+                    stock_quantity: parseInt(formData.stockQuantity),
+                    image_url: formData.imageUrl
+                }
+            ]
+        };
+
+        try {
+            const response = await addProduct(productData);
+            if (response.ok) {
+                alert('adicionado com sucesso');
+                navigate('/admin');
+            } else {
+                console.error('Failed to add product');
+                alert('Erro ao adicionar produto');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    };
+
     return (
-        <div className="relative z-50 p-4 bg-white rounded-lg shadow-lg">
-            <button
-                className="font-oxygen p-1 text-[12px] bg-red-200 rounded-lg mb-4"
-                onClick={() => navigate('/admin')}
-            >
-                Voltar
-            </button>
-            <form className="space-y-4">
-                <input className="p-2 rounded-lg text-[15px] w-full border border-[#f6f6f6] bg-white shadow-lg" type="text" placeholder="Nome" />
-                <input className="p-2 rounded-lg text-[15px] w-full border border-[#f6f6f6] bg-white shadow-lg" type="text" placeholder="Descrição" />
-                <input className="p-2 rounded-lg text-[15px] w-full border border-[#f6f6f6] bg-white shadow-lg" type="text" placeholder="Qtde. Estoque" />
-                <input className="p-2 rounded-lg text-[15px] w-full border border-[#f6f6f6] bg-white shadow-lg" type="text" placeholder="Categoria" />
-                <input className="p-2 rounded-lg text-[15px] w-full border border-[#f6f6f6] bg-white shadow-lg" type="text" placeholder="Gênero" />
-                <div className="text-[15px]">Variação</div>
-                <input className="p-2 rounded-lg text-[15px] w-full border border-[#f6f6f6] bg-white shadow-lg" type="text" placeholder="Tamanho" />
-                <input className="p-2 rounded-lg text-[15px] w-full border border-[#f6f6f6] bg-white shadow-lg" type="text" placeholder="Cor" />
-                <input className="p-2 rounded-lg text-[15px] w-full border border-[#f6f6f6] bg-white shadow-lg" type="text" placeholder="Preço" />
-                <input className="p-2 rounded-lg text-[15px] w-full border border-[#f6f6f6] bg-white shadow-lg" type="text" placeholder="Qtde. Estoque" />
-                <input className="p-2 rounded-lg text-[15px] w-full border border-[#f6f6f6] bg-white shadow-lg" type="text" placeholder="Imagem URL upload" />
-            </form>
+        <div className={'w-full h-full'}>
+            <div>
+                <GenericProductDetail isAdd={true} handleChange={handleChange} handleSubmit={handleSubmit} data={formData} />
+            </div>
         </div>
     );
 }
